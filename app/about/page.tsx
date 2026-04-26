@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -10,8 +11,18 @@ export default function AboutPage() {
           Meet the Reviewer
         </p>
 
-        <h1 className="text-6xl font-bold mb-6">
-          Hi, I'm Coleen 🎬
+        <div className="mb-6 flex justify-center">
+        <Image
+          src="/images/coleen.jpg"
+          alt="Coleen"
+          width={120}
+          height={120}
+          className="rounded-full object-cover border-4 border-pink-400"
+        />
+        </div>
+
+        <h1 className="text-4xl font-bold mb-4">
+          Hi, I'm Coleen
         </h1>
 
         <p className="text-gray-400 text-xl max-w-2xl mx-auto">

@@ -55,8 +55,7 @@ export default function Home() {
   </h1>
 
   <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-    Honest reviews about movies that made me cry, scream,
-    laugh, or question my life decisions.
+    My unfiltered thoughts after spending 2 hours staring at a screen. Sometimes I regret it. Sometimes I don't. You'll find out which.
   </p>
 </header>
       <section className="max-w-6xl mx-auto px-10 mb-20">
@@ -119,8 +118,7 @@ export default function Home() {
         </p>
 
         <p className="mb-8">
-          This blog exists because my friends got tired of my unsolicited
-          movie opinions.
+          This blog exists because I needed a place to dump all my movie thoughts somewhere other than my notes app.
         </p>
 
         <h2 className="text-3xl font-bold mt-12 mb-6">
