@@ -1,6 +1,44 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const movies = [
+  {
+    title: "La La Land",
+    genre: "Musical / Romance",
+    image: "/images/lalaland.jpg",
+    href: "/reviews/la-la-land",
+  },
+  {
+    title: "White Bear",
+    genre: "Sci-Fi / Thriller",
+    image: "/images/wb.jpg",
+    href: "/reviews/white-bear",
+  },
+  {
+    title: "Pride & Prejudice",
+    genre: "Romance / Drama",
+    image: "/images/pride.jpg",
+    href: "/reviews/pride-and-prejudice",
+  },
+  {
+    title: "50 First Dates",
+    genre: "Romance / Drama",
+    image: "/images/fiftyfirstdates.jpg",
+    href: "/reviews/fifty-first-dates",
+  },
+  {
+    title: "Bring Her Back",
+    genre: "Horror",
+    image: "/images/bhb.jpg",
+    href: "/reviews/bring-her-back",
+  },
+];
 
 export default function Home() {
+  const [search, setSearch] = useState("");
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       
@@ -31,6 +69,29 @@ export default function Home() {
     <p className="text-gray-300 text-lg">
       "That watermelon scene deserves jail time."
     </p>
+  </div>
+</section>
+
+<section className="max-w-6xl mx-auto px-8 mb-16">
+  <div className="relative rounded-3xl overflow-hidden border border-gray-800">
+
+    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10" />
+
+    <Image
+      src="/images/lalaland.jpg"
+      alt="Featured Movie"
+      width={1200}
+      height={500}
+      className="w-full h-[400px] object-cover"
+    />
+
+    <div className="absolute bottom-10 left-10 z-20 max-w-md">
+      <h2 className="text-4xl font-bold mb-2">Featured: La La Land</h2>
+      <p className="text-gray-300">
+        A movie that made me rethink life, love, and emotional damage.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -88,49 +149,43 @@ export default function Home() {
           Recent Reviews
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex gap-6 overflow-x-auto pb-4 scroll-smooth">
           
+          {movies.map((movie, index) => (
           <Link
-            href="/reviews/la-la-land"
-            className="bg-gray-900/70 backdrop-blur-lg p-5 rounded-3xl border border-gray-800 hover:scale-105 transition"
+            key={index}
+            href={movie.href}
+            className="min-w-[250px] group bg-gray-900/70 backdrop-blur-lg p-4 rounded-3xl border border-gray-800 hover:border-pink-500/50 hover:scale-105 transition-all duration-300"
           >
-            <h3 className="text-2xl font-bold">La La Land</h3>
-            <p className="text-gray-400">Musical / Romance</p>
-          </Link>
+          <div className="overflow-hidden rounded-2xl mb-4">
+          <Image
+            src={movie.image}
+            alt={movie.title}
+            width={400}
+            height={250}
+            className="w-full h-40 object-cover rounded-2xl group-hover:scale-110 transition duration-500"
+          />
+          </div>
 
-          <Link
-            href="/reviews/white-bear"
-            className="bg-gray-900/70 backdrop-blur-lg p-5 rounded-3xl border border-gray-800 hover:scale-105 transition"
-          >
-            <h3 className="text-2xl font-bold">White Bear</h3>
-            <p className="text-gray-400">Sci-Fi / Thriller</p>
-          </Link>
+          <h3 className="text-2xl font-bold group-hover:text-pink-400 transition">
+            {movie.title}
+          </h3>
 
-          <Link
-            href="/reviews/pride-and-prejudice"
-            className="bg-gray-900/70 backdrop-blur-lg p-5 rounded-3xl border border-gray-800 hover:scale-105 transition"
-          >
-            <h3 className="text-2xl font-bold">Pride & Prejudice</h3>
-            <p className="text-gray-400">Romance / Drama</p>
+          <p className="text-gray-400">{movie.genre}</p>
           </Link>
+          ))}
 
-          <Link
-            href="/reviews/fifty-first-dates"
-            className="bg-gray-900/70 backdrop-blur-lg p-5 rounded-3xl border border-gray-800 hover:scale-105 transition"
-          >
-            <h3 className="text-2xl font-bold">50 First Dates</h3>
-            <p className="text-gray-400">Romance / Drama</p>
-          </Link>
-
-          <Link
-            href="/reviews/bring-her-back"
-            className="bg-gray-900/70 backdrop-blur-lg p-5 rounded-3xl border border-gray-800 hover:scale-105 transition"
-          >
-            <h3 className="text-2xl font-bold">Bring Her Back</h3>
-            <p className="text-gray-400">Horror</p>
-          </Link>
         </div>
       </section>
+
+      <div className="max-w-2xl mx-auto mb-10 px-8">
+  <input
+    type="text"
+    placeholder="Search movies..."
+    className="w-full p-4 rounded-2xl bg-gray-900 border border-gray-700 text-white"
+    onChange={(e) => setSearch(e.target.value)}
+  />
+</div>
 
     </main>
   );
