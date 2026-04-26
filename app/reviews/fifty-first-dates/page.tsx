@@ -90,6 +90,15 @@ export default function FiftyFirstDatesReview() {
         <br />
         2/10 emotional safety.
       </p>
+
+      <a
+        href="https://www.youtube.com/watch?v=17KJk3ErIx0"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-pink-400 underline hover:text-pink-300"
+      >
+        Watch the trailer here 🎬
+      </a>
     </main>
   );
 }

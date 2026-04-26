@@ -76,6 +76,15 @@ export default function PrideAndPrejudiceReview() {
   <br />
   10/10 Mr. Darcy.
 </p>
+
+<a
+  href="https://www.youtube.com/watch?v=Ur_DIHs92NM"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-pink-400 underline hover:text-pink-300"
+>
+  Watch the trailer here 🎬
+</a>
     </main>
   );
 }

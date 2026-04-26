@@ -74,6 +74,15 @@ export default function LaLaLandReview() {
 <p className="mt-4 italic text-gray-400">
   <em>"Welcome to Seb's."</em>
 </p>
+
+<a
+  href="https://www.youtube.com/watch?v=0pdqf4P9MB8"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-pink-400 underline hover:text-pink-300"
+>
+  Watch the trailer here 🎬
+</a>
     </main>
   );
 }

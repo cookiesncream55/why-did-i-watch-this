@@ -81,6 +81,15 @@ export default function BringHerBackReview() {
         <br />
         0/10 comfort.
       </p>
+
+      <a
+        href="https://www.youtube.com/watch?v=kBskrYZfhw8"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-pink-400 underline hover:text-pink-300"
+      >
+        Watch the trailer here 🎬
+      </a>
     </main>
   );
 }

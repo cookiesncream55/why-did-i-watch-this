@@ -94,6 +94,15 @@ export default function WhiteBearReview() {
         <br />
         0/10 trust in humanity.
       </p>
+
+      <a
+        href="https://www.youtube.com/watch?v=z2spS4Lc3CM"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-pink-400 underline hover:text-pink-300"
+      >
+        Watch the trailer here 🎬
+      </a>
     </main>
   );
 }
