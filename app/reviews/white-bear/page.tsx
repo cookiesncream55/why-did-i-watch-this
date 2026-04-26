@@ -24,8 +24,8 @@ export default function WhiteBearReview() {
         <strong>Would I watch again?</strong> Absolutely not... but maybe.
       </p>
 
-      <p className="mt-4 italic">
-        "Okay, this looks like a survival mystery."
+      <p className="mt-4">
+        I started watching this episode thinking, <em>"Okay, this looks like a survival mystery."</em>
       </p>
 
       <p className="mt-4">
