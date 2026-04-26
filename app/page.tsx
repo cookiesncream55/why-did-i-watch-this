@@ -39,6 +39,7 @@ const movies = [
 
 export default function Home() {
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       
@@ -150,8 +151,17 @@ export default function Home() {
         </h2>
 
         <div className="flex gap-6 overflow-x-auto pb-4 scroll-smooth">
+          className="min-w-[260px] group bg-gray-900/70 backdrop-blur-lg p-4 rounded-3xl border border-gray-800 hover:border-pink-500/50 transition"
           
-          {movies.map((movie, index) => (
+          {movies
+          .filter((movie) => {
+          const matchSearch = movie.title.toLowerCase().includes(search.toLowerCase());
+          const matchCategory =
+          category === "All" || movie.genre.includes(category);
+
+          return matchSearch && matchCategory;
+          })
+          .map((movie, index) => (
           <Link
             key={index}
             href={movie.href}
@@ -179,12 +189,24 @@ export default function Home() {
       </section>
 
       <div className="max-w-2xl mx-auto mb-10 px-8">
-  <input
-    type="text"
-    placeholder="Search movies..."
-    className="w-full p-4 rounded-2xl bg-gray-900 border border-gray-700 text-white"
-    onChange={(e) => setSearch(e.target.value)}
-  />
+      <input
+        type="text"
+        placeholder="Search movies..."
+        className="w-full p-4 rounded-2xl bg-gray-900 border border-gray-700 text-white"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      </div>
+
+      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+  {["All", "Romance", "Horror", "Sci-Fi"].map((cat) => (
+    <button
+      key={cat}
+      onClick={() => setCategory(cat)}
+      className="px-4 py-2 rounded-full border border-gray-700 hover:border-pink-500"
+    >
+      {cat}
+    </button>
+  ))}
 </div>
 
     </main>
