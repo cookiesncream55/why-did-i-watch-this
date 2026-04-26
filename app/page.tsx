@@ -151,7 +151,6 @@ export default function Home() {
         </h2>
 
         <div className="flex gap-6 overflow-x-auto pb-4 scroll-smooth">
-          className="min-w-[260px] group bg-gray-900/70 backdrop-blur-lg p-4 rounded-3xl border border-gray-800 hover:border-pink-500/50 transition"
           
           {movies
           .filter((movie) => {
